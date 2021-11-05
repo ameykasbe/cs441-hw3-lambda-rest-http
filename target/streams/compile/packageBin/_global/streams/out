@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/rest_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	logback-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/logback-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AkkaHttp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/AkkaHttp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HttpGet$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/HttpGet$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AkkaHttp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/AkkaHttp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HttpGet.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ameykasbe/Desktop/Amey/gRPC-REST/REST/target/scala-2.12/classes/HttpGet.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
