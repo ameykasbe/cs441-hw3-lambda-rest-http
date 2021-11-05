@@ -58,3 +58,7 @@
 12:30:35.022 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
 12:31:08.855 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
 12:31:08.865 [main] INFO  HttpGet$ - Sending GET request.
+16:34:21.249 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+16:34:21.252 [main] INFO  HttpGet$ - Sending GET request.
+16:36:47.424 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+16:36:47.427 [main] INFO  HttpGet$ - Sending GET request.

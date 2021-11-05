@@ -43,7 +43,7 @@ class HttpRestTestSuite extends AnyFunSpec {
         // Creates Source from file with given file
         val responseBody = scala.io.Source.fromURL(uri).mkString
 
-        assert(responseBody == "154")
+        assert(responseBody == "Pattern found. Number of log events with pattern: 10")
       }
     }
 
@@ -59,7 +59,9 @@ class HttpRestTestSuite extends AnyFunSpec {
       // Creates Source from file with given file
       val responseBody = scala.io.Source.fromURL(uri).mkString
 
-      assert(responseBody == "9")
+      assert(responseBody == "Pattern not found.")
     }
   }
+
+
 }
