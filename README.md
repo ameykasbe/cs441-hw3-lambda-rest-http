@@ -149,27 +149,18 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 
 5. Test the lambda function with format given in lambda/ directory.
 
+
 ## Job3
-- Code
-- Process
+### Important files
 
-## Execution Process
-### Prerequisites
-* [Java 8](https://www.oracle.com/java/technologies/downloads/#java8-windows) - Apache Hadoop supports Java 8.
-* [vmWare Workstation Pro](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html)
-* [HortonBox](https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html?utm_source=mktg-tutorial)
-
-### Create jar file
-* Clone this repository.
-* Open terminal, navigate to the root directory and create the jar file using command -  <br />
-  `sbt clean compile assembly`
+### Execution Process
+### Versions
+* [Java 8](https://www.oracle.com/java/technologies/downloads/#java8-windows) - Used while developing the project.
+* Scala version 2.12.4. This is important because Akka 2.5.26 used while developing the project is supported by Scala 2.12.X. Compatibilities can be checked and different versions can also be used as per the compatibility matrix.
 
 ### Use appropriate configurations
-* Check `applications.conf` for all the configurations. These configurations are extremely important to get correct outputs.
-* For Job1, specify the predefined time duration between which the logs are needed to be analyzed. 
-* For Job2, specify the time interval
-
-
+* Check `applications.conf` for all the configurations.
+* Configurations are explained in the comments.
 
 ### Local Environment Execution
 #### Setup Hadoop Environment
