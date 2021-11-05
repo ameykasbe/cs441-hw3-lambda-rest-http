@@ -1,0 +1,6 @@
+{
+  "resource": "/lambda_grpc",
+  "path": "/lambda_grpc",
+  "httpMethod": "POST",
+  "body": "{\"pattern\": \"([a-c][e-g][0-3]|[A-Z][5-9][f-w]){5,15}\", \"input_date\": \"2021-11-01\", \"input_time\": \"02:20:17.928\",\"delta_time\":1}"
+}

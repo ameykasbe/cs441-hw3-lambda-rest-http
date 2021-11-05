@@ -1,0 +1,11 @@
+{
+  "resource": "/lambda_grpc",
+  "path": "/lambda_grpc",
+  "httpMethod": "GET",
+  "queryStringParameters": {
+    "input_date": "2021-11-01",
+    "input_time": "19:41:12.024",
+    "delta_time": 1,
+    "pattern": "([a-c][e-g][0-3]|[A-Z][5-9][f-w]){5,15}"
+  }
+}

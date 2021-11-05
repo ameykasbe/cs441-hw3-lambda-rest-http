@@ -73,7 +73,8 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 7. Compile and test run
    `sbt clean compile` <br />
    `sbt clean compile run` <br />
-8. Setup cron job
+8. Create a S3 bucket.
+9. Setup cron job
    1. Create cron script
       1. In the root directory create a cron script e.g. `cronscript.sh`
       2. Enter three commands
@@ -92,8 +93,61 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
       
       
 ## Job2
-- Lambda function
-- Process
+### [Lambda Function](https://aws.amazon.com/lambda/)
+* Lambda function is a serverless compute service which can be triggered by some events. 
+### Algorithm
+* Lambda function can be found in the directory lambda/ with name `lambda_grpc.py`
+* The algorithm used is Binary Search.
+  * The first log event's position becomes the high pointer
+  * The last log event's position becomes the low pointer.
+  * The log is divided into half (figuratively) in every iteration and is checked if the time of the middle log event (with pointer mid) falls between the required duration
+  * The log is continuously divided until the any log is found with time inside the required time duration
+  * From that log event, logs are traversed in both directions until the log arrives which are not in the required time duration.
+  * While traversal, the log message is searched for required pattern, if it is found, a counter (initialized as 0) is increased.
+  * At last the output with proper status code and message are sent as response.
+* Status codes
+  * `200` - Pattern present
+  * `404` - Pattern not present. OR Time duration requested is not in the log file.
+* Configuration parameters are passed as request parameters.
+
+### [AWS API Gateway](https://aws.amazon.com/api-gateway/)
+* AWS API Gateway is a service that makes it easier to create and maintain APIs.
+
+### Setup AWS Lambda and AWS API Gateway
+
+1. Setup AWS Lambda function 
+   1. Navigate to AWS Lambda
+   2. Create Function
+      1. Select from scratch
+         1. Enter name 
+         2. Select Python as language
+         3. Enter the code from lambda/lambda_grpc.py
+         4. Deploy
+2. Setup API gateway
+   1. Navigate to AWS Lambda function
+   2. Click on Add Trigger
+   3. Select API Gateway
+   4. Create an API
+      1. Configuration
+         1. API Type - REST
+         2. Security - Open
+         
+* Gateway is now open to internet
+* Lambda function will be triggered by HTTP GET and POST requests.
+3. Create IAM role for Lambda to give permission to access S3 buckets
+   1. Navigate to IAM Permissions
+   2. Select roles from the left panel
+   3. Click on Create role
+      1. Click on Lambda in common cases
+      2. Search for "AmazonS3FullAccess"
+      3. Create role
+4. Attach the created IAM role to the Lambda
+    1. Navigate to the Lambda function
+    2. Click on Configuration -> Permission -> Execution role
+    3. Click on Edit under Execution roles
+    4. Select the role name given above e.g. LAMBDA-S3-TEST
+
+5. Test the lambda function with format given in lambda/ directory.
 
 ## Job3
 - Code
