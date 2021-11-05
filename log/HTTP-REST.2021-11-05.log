@@ -36,3 +36,25 @@
 11:46:38.942 [main] INFO  AkkaHttp$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
 11:46:39.121 [main] INFO  AkkaHttp$ - Created HttpRequest instance.
 11:46:39.121 [main] INFO  AkkaHttp$ - Sending POST request.
+11:50:45.113 [main] INFO  AkkaHttp$ - Created ActorSystem and ActorMaterializer instances.
+11:50:45.118 [main] INFO  AkkaHttp$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+11:50:45.282 [main] INFO  AkkaHttp$ - Created HttpRequest instance.
+11:50:45.282 [main] INFO  AkkaHttp$ - Sending POST request.
+12:01:57.000 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:02:42.658 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:05:30.591 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:06:31.730 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:07:04.199 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:10:01.714 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:10:01.723 [main] INFO  HttpGet$ - Sending GET request.
+12:10:29.111 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:10:29.114 [main] INFO  HttpGet$ - Sending GET request.
+12:10:31.520 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:10:31.523 [main] INFO  HttpGet$ - Sending GET request.
+12:12:43.681 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:12:43.685 [main] INFO  HttpGet$ - Sending GET request.
+12:29:51.713 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:30:11.181 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:30:35.022 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:31:08.855 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+12:31:08.865 [main] INFO  HttpGet$ - Sending GET request.
