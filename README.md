@@ -202,5 +202,7 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 ## Video Link
 * Video link of the short video that documents all steps of the deployment and execution -
   [Video Link](https://drive.google.com/file/d/1HQtFmeDPZoDfgBvT9UWsL8KxgV-4dun7/view?usp=sharing)
+* YouTube link
+  [YouTube Link](https://youtu.be/208LZdbXZC8)
 
   
