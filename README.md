@@ -152,6 +152,7 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 
 
 ## Job3
+### HTTP requests using Akka and scala.io.source
 #### Configuration
 * `application.conf` contains the configurations. 
 * Configurations are explained in the comments.
@@ -162,7 +163,7 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 * Scala version 2.12.4. This is important because Akka 2.5.26 used while developing the project is supported by Scala 2.12.X. Compatibilities can be checked and different versions can also be used as per the compatibility matrix.
 
 ### Local Environment Execution
-### Using IntelliJ Idea
+#### Using IntelliJ Idea
 1. Clone this repository
 2. Import the project in IntelliJ Idea
 3. POST request
@@ -170,7 +171,7 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 4. GET request
    1. Run the `main` method from `HttpGet.scala`
 
-### By SBT run command
+#### By SBT run command
 1. Clone this repository
 2. In terminal, navigate to root path of the project
 3. Execute - <br />
@@ -182,17 +183,21 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
    1. When you receive the response, terminate using Ctrl + C
 6. Select 2 HttpGet for GET request
 
-## Unit testing procedure
-### Using IntelliJ Idea
+### Unit testing procedure
+#### Using IntelliJ Idea
 1. Clone this repository
 2. Import the project in IntelliJ Idea
 3. Run the `HttpRestTestSuite` class from `HttpRestTest` package under test/scala.
 
-### By SBT test command
+#### By SBT test command
 1. Clone this repository
 2. In terminal, navigate to root path 
 3. Execute - <br />
 `sbt clean compile test`
+
+## gRPC 
+* Please navigate to the link -
+  https://github.com/ameykasbe/gRPC
 
 ## YouTube Link
 * YouTube link of the short video that documents all steps of the deployment and execution -
