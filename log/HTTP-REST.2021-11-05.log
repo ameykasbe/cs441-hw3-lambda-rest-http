@@ -68,3 +68,11 @@
 20:04:17.431 [run-main-0] INFO  AkkaHttp$ - Sending POST request.
 20:05:58.902 [run-main-0] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
 20:05:58.907 [run-main-0] INFO  HttpGet$ - Sending GET request.
+21:28:42.665 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+21:28:42.669 [main] INFO  HttpGet$ - Sending GET request.
+21:29:50.136 [main] INFO  HttpGet$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+21:29:50.142 [main] INFO  HttpGet$ - Sending GET request.
+21:30:14.809 [main] INFO  AkkaHttp$ - Created ActorSystem and ActorMaterializer instances.
+21:30:14.815 [main] INFO  AkkaHttp$ - Loaded configuration with parameters: inputDate = 2021-11-01, inputTime = 19:41:12.024, deltaTime = 1 and with uri = https://3ekrhlf0g0.execute-api.us-east-2.amazonaws.com/default/lambda_grpc
+21:30:14.979 [main] INFO  AkkaHttp$ - Created HttpRequest instance.
+21:30:14.979 [main] INFO  AkkaHttp$ - Sending POST request.

@@ -41,6 +41,7 @@ def lambda_handler(event, context):
     # Get logs from the file object
     logs = file["Body"].read().decode("utf-8").split("\n")
 
+
     # For different HTTP Methods - POST and GET parse the event differently
     # POST METHOD
     if event['httpMethod']=='POST':
@@ -49,6 +50,7 @@ def lambda_handler(event, context):
         input_time = event_body['input_time']
         input_time = input_date + " " + input_time
         delta_time = event_body['delta_time']
+        pattern = event_body['pattern']
 
     # GET METHOD
     elif event['httpMethod']=='GET':
@@ -61,6 +63,8 @@ def lambda_handler(event, context):
 
         delta_time = event['queryStringParameters']['delta_time']
         delta_time = int(delta_time)
+
+        pattern = event['queryStringParameters']['pattern']
 
 
 
@@ -102,7 +106,7 @@ def lambda_handler(event, context):
         status_code = 200 # Status code will be 200 if events are found, else 400
 
         # Define pattern
-        pattern = "([a-c][e-g][0-3]|[A-Z][5-9][f-w]){5,15}"
+        # pattern = "([a-c][e-g][0-3]|[A-Z][5-9][f-w]){5,15}"
 
         temp = mid
         while(temp>=low):
@@ -123,6 +127,7 @@ def lambda_handler(event, context):
             temp = temp + 1
         body = "Pattern found. Number of log events with pattern: " + str(count)
         if count == 0:
+            status_code = 404
             body = "Pattern not found."
 
 

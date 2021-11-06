@@ -18,7 +18,7 @@ object HttpGet {
 
   def main(args: Array[String]): Unit = {
     // URI for GET Request
-    val uri = s"$lambdaUri?input_date=$inputDate&input_time=$inputTime&delta_time=$deltaTime"
+    val uri = s"$lambdaUri?input_date=$inputDate&input_time=$inputTime&delta_time=$deltaTime&pattern=$pattern"
 
     logger.info("Sending GET request.")
     // Creates Source from file with given file
