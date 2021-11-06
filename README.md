@@ -22,7 +22,8 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 * The log generator used to develop the solution is - https://github.com/ameykasbe/LogGeneratorHW3
 * The changes are in `logback-test.xml`.
   * In the log events the time of the log event now contains date as well - "yyyy-MM-dd HH:mm:ss.SSS" 
-  * Changed the name of the log file to - LogFile.log
+  * Changed the name of the log file to - LogFile.log 
+  * Log events are now appended in the same file.
 
 ### Setup
 
@@ -151,156 +152,50 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 
 
 ## Job3
-### Important files
+#### Configuration
+* `application.conf` contains the configurations. 
+* Configurations are explained in the comments.
 
 ### Execution Process
 ### Versions
 * [Java 8](https://www.oracle.com/java/technologies/downloads/#java8-windows) - Used while developing the project.
 * Scala version 2.12.4. This is important because Akka 2.5.26 used while developing the project is supported by Scala 2.12.X. Compatibilities can be checked and different versions can also be used as per the compatibility matrix.
 
-### Use appropriate configurations
-* Check `applications.conf` for all the configurations.
-* Configurations are explained in the comments.
-
 ### Local Environment Execution
-#### Setup Hadoop Environment
-* Load the HortonBox sandbox image in vmWare Workstation pro
-* Start the virtual machine
-* Access the Hadoop environment by HortonBox Ambari environment using web browser. The IP Address can be found in the VM.
-* Access the VM using Putty with same IP address. Credentials would be hadoop/hadoop. You will be prompted to change the credentials.
-* Create admin account on Ambari by command - <br />
-`ambari-admin-password-reset`
+### Using IntelliJ Idea
+1. Clone this repository
+2. Import the project in IntelliJ Idea
+3. POST request
+   1. Run the `main` method from `AkkaHttp.scala`
+4. GET request
+   1. Run the `main` method from `HttpGet.scala`
 
-#### Execute jar file
-* Upload the jar file into the HDFS using Ambari dashboard interface.
-* Access the VM using Terminal, GET the jar file into the VM using the command - <br />
-`hadoop fs -get /path_to_jar/`
-* Execute the jar file for EACH job -<br />
-`hadoop jar <fileName>.jar Execution <jobNumber> <pathToInput> <pathToOutput>`
-
-#### Output files
-* Output files can be accessed inside the path given as argument. For each job a _jobN directory will be created.
-
-## AWS Elastic MapReduce Execution
-### Setup
-* Sign In to Amazon Web Services
-
-#### AWS EC2 (Elastic Compute Cloud)
-* Navigate to AWS EC2
-* On EC2 dashboard, on the left Panel search for Key-Pair
-* Create a Key-Pair
-
-#### AWS S3 (Simple Storage Service)
-* Navigate to AWS S3
-* Create an S3 bucket
-* Upload the jar and log files in the S3 bucket created.
-
-#### AWS EMR (Elastic MapReduce)
-* Navigate to AWS EMR
-* Create an EMR cluster 
-  * Enter a name
-  * Select the S3 bucket created earlier
-  * Select the Key-Pair created earlier
-* Wait till the cluster is ready
-* Navigate to Steps tab under AWS EMR
-* Add steps for individual jobs
-  * Click on Add Step
-  * Select the jar from AWS S3 uploaded earlier
-  * Provide arguments in format <br />
-    `Execution <JobNumber> <s3BucketInputLocation> <s3BucketOutputLocation>`
-    Examples -  
-  * Job 1 <br />
-    `Execution 1 s3://cs441-hw2-bucket/data/input s3://cs441-hw2-bucket/data/output`
-  * Job 2 <br />
-    `Execution 2 s3://cs441-hw2-bucket/data/input s3://cs441-hw2-bucket/data/output`
-  * Job 3 <br />
-    `Execution 3 s3://cs441-hw2-bucket/data/input s3://cs441-hw2-bucket/data/output`
-  * Job 4 <br />
-    `Execution 4 s3://cs441-hw2-bucket/data/input s3://cs441-hw2-bucket/data/output`
-
-## YouTube Link
-* YouTube link of the short video that documents all steps of the deployment and execution -
-  [YouTube Link](https://youtu.be/DLTfhaKWtB4)
-
-
-## Results
-### Job 1
-Create a file in comma separated format with distribution of message types in logs with messages of a particular pattern across predefined time interval.
-
-
-![](etc/Job1.png)
-
-* For the log file present in the etc directory, the output is as shown in the screenshot.
-* The first column represents log message types.
-* The second column represents the number of times log events have appeared in the logs for that particular message type with given pattern and between the time duration defined in configuration.
-* The logic behind this MapReduce job is that if we can find the log events in mappers which fall under the time gap mentioned in the configuration file, which also contains the pattern, we can send the multiset of Message Type as Key and 1 as value from the mapper to reducer.
-* Then, in reducers, where after shuffling we get Message type as key and multiset of 1, which are the number of instances of such log events of such message type, we can take the sum of all the 1s and get the sum of message types.
-
-
-
-
-### Job 2
-Time intervals sorted in the descending order that contained most log messages of the type ERROR with injected regex pattern string instances.
-
-![](etc/Job2.png)
-
-* For the log file present in the etc directory, the output is as shown in the screenshot.
-* * The first column represents time intervals from intialTime to EndTime.
-* The second column represents the number of times log events have appeared in the logs for ERROR message type with given pattern and between the time interval.
-* The logic behind this is the output from mapper should be a multiset of key value pair where key is the interval and value is 1, which represents the one time the ERROR message type has occurred in the time interval.
-* The reducer receives input in key value pair such that key is the time interval and value is multiset of 1s. Computing the sum of elements of value will result in the total number of ERROR messages in the time interval in the log.
-
-
-
-
-### Job 3
-Create a file in comma separated format with distribution of message types in logs with messages of a particular pattern.
-
-![](etc/Job3.png)
-
-* For the log file present in the etc directory, the output is as shown in the screenshot.
-* The first column represents log message types.
-* The second column represents the number of times log events have appeared in the logs for that particular message type with given pattern defined in configuration.
-* The logic behind this MapReduce job is that if we can find the log events in mappers which also the pattern defined in the configuration, we can send the multiset of Message Type as Key and 1 as value from the mapper to reducer.
-* Then, in reducers, where after shuffling we get Message type as key and multiset of 1, which are the number of instances of such log events of such message type, we can take the sum of all the 1s and get the sum of message types.
-
-
-
-### Job 4
-Create a file in comma separated format with number of characters in each log message for each log message type that contain the highest number of characters in the detected instances of the designated regex pattern.
-
-![](etc/Job4.png)
-
-* For the log file present in the etc directory, the output is as shown in the screenshot.
-* The first column represents log message types.
-* The second column represents the maximum number of character of message in the log event, for that particular message type with given pattern  defined in configuration.
-* The logic behind this MapReduce job is that if we can find the log events in mappers which contains the pattern, we can send the multiset of Message Type as Key and string length of the message as value from the mapper to reducer.
-* Then, in reducers, where after shuffling we get Message type as key and multiset of string length of messages, we can take the maximum of all the string lengths and get the sum of message types.
+### By SBT run command
+1. Clone this repository
+2. In terminal, navigate to root path of the project
+3. Execute - <br />
+   `sbt clean compile run`
+4. As there is no main class defined for the sake of simplicity the terminal will prompt a message - Multiple main classes detected. Select one to run:
+   [1] AkkaHttp
+   [2] HttpGet
+5. Select 1 AkkaHttp for POST request
+   1. When you receive the response, terminate using Ctrl + C
+6. Select 2 HttpGet for GET request
 
 ## Unit testing procedure
 ### Using IntelliJ Idea
 1. Clone this repository
 2. Import the project in IntelliJ Idea
-3. Run the `DistributedProcessingTestSuite` class from `DistributedProcessingTestSuite.scala`.
+3. Run the `HttpRestTestSuite` class from `HttpRestTest` package under test/scala.
 
 ### By SBT test command
 1. Clone this repository
-2. Ensure necessary dependencies are installed
-    * Java 8
-    * Scala runtime
-    * SBT
-   etc.
-3. In terminal, navigate to root path 
-4. Execute - <br />
+2. In terminal, navigate to root path 
+3. Execute - <br />
 `sbt clean compile test`
 
-## References
-1. Dr. Grechanik, Mark, (2020) Cloud Computing: Theory and Practice.
-2. [Apache Hadoop](http://hadoop.apache.org/)
-3. [HortonBox](https://www.cloudera.com/downloads/hortonworks-sandbox.html)
-4. [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro.html)
-5. [MapReduce Wikipedia](https://en.wikipedia.org/wiki/MapReduce)
-6. http://indico.ictp.it/event/8170/session/10/contribution/21/material/0/1.pdf
-7. [vmWare Wikipedia](https://en.wikipedia.org/wiki/VMware_Workstation)
-8. [Edureka](https://www.youtube.com/c/edurekaIN) 
-9. [TutorialsPoint](https://www.tutorialspoint.com/hadoop/hadoop_mapreduce.htm)
+## YouTube Link
+* YouTube link of the short video that documents all steps of the deployment and execution -
+  [YouTube Link]()
+
+  

@@ -63,14 +63,6 @@ object AkkaHttp {
     // Create a future object containting the response. Future represents the result of an asynchronous operation
     val responseFuture : Future[HttpResponse] = Http().singleRequest(request)
 
-//    responseFuture.onComplete {
-//        case Success(res) => {
-////          println(res.entity)
-//        val entity = res.entity.toStrict(2.seconds)
-//          println(entity.)
-//        }
-//        case Failure(_)   => sys.error("something wrong")
-//      }
 
     // Unpack the future. Convert into a strict entity. Entity contains the whole content of the response.
     val entityFuture : Future[HttpEntity.Strict] = responseFuture.flatMap(response => response.entity.toStrict(2.seconds))
