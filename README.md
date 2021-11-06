@@ -199,8 +199,8 @@ Invoke the lambda functions by using the AWS API Gateway with the requests GET a
 * Please navigate to the link -
   https://github.com/ameykasbe/gRPC
 
-## YouTube Link
-* YouTube link of the short video that documents all steps of the deployment and execution -
-  [YouTube Link](https://youtu.be/0uDYI6TUnag)
+## Video Link
+* Video link of the short video that documents all steps of the deployment and execution -
+  [Video Link](https://drive.google.com/file/d/1HQtFmeDPZoDfgBvT9UWsL8KxgV-4dun7/view?usp=sharing)
 
   
